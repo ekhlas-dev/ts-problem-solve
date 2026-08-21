@@ -23,3 +23,36 @@ const getStockStatus =(stock:number):string=>{
 // console.log(getStockStatus(0))
 // console.log(getStockStatus(3))
 // console.log(getStockStatus(12))
+
+type User = {
+  name:string
+  age:number
+  city:string
+}
+
+const formatUserProfile =(user:User):string=>{
+  const {name,age,city} = user
+  return `${name} is ${age} years old and lives in ${city}`
+}
+// console.log(formatUserProfile({
+//   name:"ekhlas",
+//   age:22,
+//   city:"dhaka"
+// }))
+
+type Product ={
+  name:string,
+  price:number
+}
+
+const  calculateCartTotal =(products:Product[]):number=>{
+  const total:number =products.reduce((accu,item)=>accu+item.price,0) 
+  return total
+}
+
+const products = [
+    { name: "Keyboard", price: 1500 },
+    { name: "Mouse", price: 800 },
+    { name: "USB Cable", price: 300 }
+];
+console.log(calculateCartTotal(products))
